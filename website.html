@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>college management system</title>
+  <style>
+    /* CSS Styles */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px;
+      background-color: #e0f0ff;
+      border-radius: 10px;
+    }
+
+    .book-list ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .book-list li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .contact p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .tabs button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      border: none;
+      background: #0059b3;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .tabs button.active {
+      background: #004080;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Library Management System</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#" onclick="showTab('student')">Books</a>
+      <a href="#" onclick="showTab('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-button active" onclick="showTab('home')">Home</button>
+      <button class="tab-button" onclick="showTab('books')">Books</button>
+      <button class="tab-button" onclick="showTab('contact')">Contact</button>
+    </div>
+
+    <!-- Home Section -->
+    <div id="home" class="tab-content active">
+      <section class="hero">
+        <h2>Welcome to the Library</h2>
+        <p>Explore, borrow, and enjoy your favorite books!</p>
+      </section>
+    </div>
+
+    <!-- Books Section -->
+    <div id="books" class="tab-content">
+      <section class="book-list">
+        <h2 class="section-title">Available Books</h2>
+        <ul>
+          <li><strong>The Great Gatsby</strong> by F. Scott Fitzgerald</li>
+          <li><strong>1984</strong> by George Orwell</li>
+          <li><strong>To Kill a Mockingbird</strong> by Harper Lee</li>
+          <li><strong>Harry Potter</strong> by J.K. Rowling</li>
+          <li><strong>The Hobbit</strong> by J.R.R. Tolkien</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="tab-content">
+      <section class="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p>Email: library@domain.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+        <p>Address: 123 Library St, Booktown, BK 10001</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 college management system</p>
+  </footer>
+
+  <script>
+    // Simple tab switcher
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
